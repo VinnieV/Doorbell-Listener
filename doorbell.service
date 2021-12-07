@@ -1,0 +1,14 @@
+[Unit]
+Description=Doorbell Service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=ubuntu
+ExecStart=/usr/bin/env python3 /home/ubuntu/Doorbell/doorbell.py
+
+[Install]
+WantedBy=multi-user.target
